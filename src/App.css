@@ -1,0 +1,109 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}
+
+/*header*/
+.header__container {
+  background-color: #000;
+  width: 100vw;
+  height: 60px;
+  color: #fff;
+}
+.header__wrapper {
+  background-color: inherit;
+  max-width: 1200px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: inherit;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+.header__title {
+  border: none;
+  background-color: transparent;
+  font-size: 1.5rem;
+  font-weight: bolder;
+  color: #fff;
+}
+
+.header__nav {
+  min-width: 250px;
+  height: inherit;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-grow: 0.8;
+}
+.header__search {
+  margin: 1rem;
+  flex-grow: 0.8;
+}
+.header__search-input {
+  height: 2rem;
+  border: 1px solid black;
+  border-radius: 10px;
+  text-align: center;
+  background-color: hsla(0, 0%, 100%, 0.16);
+  width: 100%;
+  color: #fff;
+  font-size: 1rem;
+}
+.header__nav-wrapper-mobile {
+  height: 30px;
+  font-size: 1.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media only screen and (min-width: 980px) {
+  .header__nav-wrapper-desk {
+    flex-grow: 0.2;
+    display: flex;
+    justify-content: space-around;
+    font-size: 1rem;
+    font-weight: bolder;
+  }
+  .header__nav-wrapper-desk a {
+    cursor: pointer;
+  }
+}
