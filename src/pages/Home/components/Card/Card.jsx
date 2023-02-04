@@ -1,5 +1,6 @@
 import PropTypes from "prop-types";
 import "./Card.css";
+
 export const Card = ({
   name = "Grand Theft Auto V",
   background_image = "https://media.rawg.io/media/games/456/456dea5e1c7e3cd07060c14e96612001.jpg",
@@ -18,7 +19,7 @@ export const Card = ({
   return (
     <section className="card__Container">
       <img src={background_image} alt={name} className="card__img" />
-      {/* reemplazar por sus iconos */}
+      {/* TODO:// reemplazar por sus iconos */}
       <div className="card__platforms">
         {platforms.map((el) => (
           <p key={el}>{el}</p>

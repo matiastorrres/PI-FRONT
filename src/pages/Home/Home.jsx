@@ -1,26 +1,34 @@
 import { Header } from "@/components/Header/Header";
-import { useContext } from "react";
 import { CardsContainer } from "./components/CardsContainer/CardsContainer";
 import { Pagination } from "./components/Pagination/Pagination";
-
-import { HomeContext } from "./context/HomeContext";
+import { useGetallVideoGames } from "./hook/useGetallVideoGames";
+import { usePaginatedData } from "./hook/usePaginatedData";
 import "./Home.css";
 
 export const Home = () => {
-  const { allVideogames, amountOfDataPerPage, loading } =
-    useContext(HomeContext);
+  const { allVideogames, loading } = useGetallVideoGames();
+
+  const { page, setPage, currentVideogames, amountOfDataPerPage } =
+    usePaginatedData({
+      allVideogames,
+    });
 
   if (loading) return <>cargandooo...</>;
+
   return (
-    <section className="pageHome__container">
+    <section>
       <Header />
-      <main className="pageHome__main">
-        <CardsContainer />
-      </main>
-      <Pagination
-        dataArray={allVideogames}
-        amountOfDataPerPage={amountOfDataPerPage}
-      />
+      <div className="pageHome__container">
+        <main className="pageHome__main">
+          <CardsContainer currentVideogames={currentVideogames} />
+        </main>
+        <Pagination
+          dataArray={allVideogames}
+          amountOfDataPerPage={amountOfDataPerPage}
+          setPage={setPage}
+          page={page}
+        />
+      </div>
     </section>
   );
 };

@@ -4,6 +4,7 @@
   height: 60px;
   color: #fff;
   position: fixed;
+  z-index: 50;
 }
 .header__wrapper {
   background-color: inherit;
