@@ -1,0 +1,19 @@
+.modalOrder__container {
+  background-color: rgba(0, 0, 0, 0.5);
+  position: absolute;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 60;
+}
+
+.order__dropdown {
+  background-color: #fff;
+  position: absolute;
+  height: 250px;
+  width: 200px;
+  bottom: 0;
+  right: 10px;
+  border-radius: 1rem;
+  padding: 1rem;
+}

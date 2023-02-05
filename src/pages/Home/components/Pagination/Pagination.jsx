@@ -9,7 +9,7 @@ export const Pagination = ({
   page,
 }) => {
   const { numberPage, goToNextPage, goToPreviousPage, handleClick } =
-    usePagination({ dataArray, amountOfDataPerPage, setPage });
+    usePagination({ dataArray, amountOfDataPerPage, setPage, page });
 
   return (
     <section className="pagination__container">

@@ -9,6 +9,7 @@ html {
   overflow-x: hidden;
   margin: 0;
   padding: 0;
+  font-family: Open, Helvetica, sans-serif;
 }
 *,
 *::after,
@@ -19,4 +20,5 @@ body {
   overflow-x: hidden;
   margin: 0;
   padding: 0;
+  background-color: #151515;
 }

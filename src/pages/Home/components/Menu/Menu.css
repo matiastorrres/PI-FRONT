@@ -1,0 +1,30 @@
+.dropdown__container {
+  background-color: rgba(0, 0, 0, 0.5);
+  position: absolute;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+}
+.dropdown__menu {
+  color: #000;
+  position: absolute;
+  right: 5px;
+  background-color: #fff;
+  border-radius: 1rem;
+  height: 90vh;
+  width: 300px;
+}
+.dropdown__item {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-end;
+  padding: 0 1rem;
+  margin-top: 1rem;
+}
+.dropdown__item-home {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 1rem;
+}

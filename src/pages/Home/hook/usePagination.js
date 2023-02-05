@@ -1,6 +1,11 @@
 import { useState, useEffect } from "react";
 
-export const usePagination = ({ dataArray, amountOfDataPerPage, setPage }) => {
+export const usePagination = ({
+  dataArray,
+  amountOfDataPerPage,
+  setPage,
+  page,
+}) => {
   const [numberPage, setNumberPage] = useState([]);
   const [calculationNumberPage, setCalculationNumberPage] = useState([]);
 
