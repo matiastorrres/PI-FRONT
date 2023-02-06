@@ -1,12 +1,15 @@
 import "./app.css";
 import { AppRouter } from "./AppRouter";
 import { BrowserRouter } from "react-router-dom";
+import { Suspense } from "react";
 
 function App() {
   return (
-    <BrowserRouter>
-      <AppRouter />
-    </BrowserRouter>
+    <Suspense fallback={<>Cargando pagina....</>}>
+      <BrowserRouter>
+        <AppRouter />
+      </BrowserRouter>
+    </Suspense>
   );
 }
 

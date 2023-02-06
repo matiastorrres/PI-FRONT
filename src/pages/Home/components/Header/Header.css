@@ -8,7 +8,7 @@
 }
 .header__wrapper {
   background-color: inherit;
-  max-width: 1200px;
+  max-width: 1500px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -63,7 +63,7 @@
   align-items: center;
 }
 
-@media only screen and (min-width: 980px) {
+@media (min-width: 980px) {
   .header__nav-wrapper-desk {
     flex-grow: 0.2;
     display: flex;

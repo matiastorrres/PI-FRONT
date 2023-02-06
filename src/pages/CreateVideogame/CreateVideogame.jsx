@@ -1,3 +1,5 @@
 export const CreateVideogame = () => {
-  return <div></div>;
+  return (
+    <div style={{ color: "white", backgroundColor: "red" }}>soy el create</div>
+  );
 };

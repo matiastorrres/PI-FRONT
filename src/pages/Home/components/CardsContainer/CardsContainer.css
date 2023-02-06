@@ -8,6 +8,7 @@
 
 @media (min-width: 980px) {
   .container__cards {
-    background-color: red;
+    flex-direction: row;
+    flex-wrap: wrap;
   }
 }

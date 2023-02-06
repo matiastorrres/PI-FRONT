@@ -1,5 +1,9 @@
 import { useState, useEffect } from "react";
 
+/*aca esta toda la logica para rederizar el paginado y las funciones que se usan 
+para cambiar de pagina
+*/
+
 export const usePagination = ({
   dataArray,
   amountOfDataPerPage,
@@ -13,11 +17,11 @@ export const usePagination = ({
     const res = Math.ceil(dataArray.length / amountOfDataPerPage);
     setCalculationNumberPage(res);
     let countButtons = [];
-    for (let i = 1; i <= calculationNumberPage; i++) {
+    for (let i = 1; i <= res; i++) {
       countButtons.push(i);
     }
     setNumberPage(countButtons);
-  }, [calculationNumberPage]);
+  }, [dataArray]);
 
   const goToNextPage = () => {
     if (page < calculationNumberPage) setPage(page + 1);

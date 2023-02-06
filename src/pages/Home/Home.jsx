@@ -4,23 +4,26 @@ import { Pagination } from "./components/Pagination/Pagination";
 import { useGetallVideoGames } from "./hook/useGetallVideoGames";
 import { usePaginatedData } from "./hook/usePaginatedData";
 import { SideBarMovile } from "./components/SideBarMobile/SideBarMobile";
+import { SideBarDesk } from "./components/SideBarDesk/SideBarDesk";
+import { Loader } from "../../components/Loader/Loader";
 import "./Home.css";
 
 export const Home = () => {
+  /*busco todos lo videogames */
   const { allVideogames, loading, setAllVidegames } = useGetallVideoGames();
+  /* calculo el paginado*/
   const { page, setPage, currentVideogames, amountOfDataPerPage } =
-    usePaginatedData({
-      allVideogames,
-    });
+    usePaginatedData({ allVideogames });
 
-  if (loading) return <>cargandooo...</>;
+  if (loading) return <Loader />;
 
   return (
-    <section>
+    <>
       <Header setAllVidegames={setAllVidegames} />
       <div className="pageHome__container">
         <main className="pageHome__main">
           <SideBarMovile />
+          <SideBarDesk />
           <CardsContainer currentVideogames={currentVideogames} />
         </main>
         <Pagination
@@ -30,6 +33,6 @@ export const Home = () => {
           page={page}
         />
       </div>
-    </section>
+    </>
   );
 };

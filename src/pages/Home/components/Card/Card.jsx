@@ -1,48 +1,35 @@
 import PropTypes from "prop-types";
 import "./Card.css";
 
-export const Card = ({
-  name = "Grand Theft Auto V",
-  background_image = "https://media.rawg.io/media/games/456/456dea5e1c7e3cd07060c14e96612001.jpg",
-  genres = ["Action", "Adventure"],
-  rating = "4.47",
-  platforms = [
-    "PlayStation 5",
-    "Xbox Series S/X",
-    "PlayStation 4",
-    "PC",
-    "PlayStation 3",
-    "Xbox 360",
-    "Xbox One",
-  ],
-}) => {
+export const Card = ({ name, background_image, genres, rating, platforms }) => {
   return (
     <section className="card__Container">
       <img src={background_image} alt={name} className="card__img" />
       {/* TODO:// reemplazar por sus iconos */}
       <div className="card__platforms">
-        {platforms.map((el) => (
+        {platforms?.map((el) => (
           <p key={el}>{el}</p>
         ))}
       </div>
       <h3 className="card__title">{name}</h3>
-      <div className="card__genres">
-        <p className="genre__title">Genres: </p>
-        <div className="genre__items">
+      <article className="card__article">
+        <p>Genres: </p>
+        <div className="card__items">
           {genres.map((el) => (
-            <p className="genre__item" key={el}>
+            <p className="card__item" key={el}>
               {el}
             </p>
           ))}
         </div>
-      </div>
-      <div className="card__rating">
+      </article>
+      <article className="card__article">
         <p>Rating: </p>
         <p> {rating}</p>
-      </div>
+      </article>
     </section>
   );
 };
+
 Card.prototype = {
   name: PropTypes.string,
   background_image: PropTypes.string,

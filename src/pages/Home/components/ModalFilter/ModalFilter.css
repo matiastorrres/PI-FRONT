@@ -6,3 +6,23 @@
   height: 100vh;
   z-index: 60;
 }
+.filter__dropdown {
+  background-color: #fff;
+  position: absolute;
+  min-height: 250px;
+  max-height: 80vh;
+  min-width: 200px;
+  bottom: 0;
+  right: 10px;
+  border-radius: 1rem;
+  padding: 1rem;
+  background-color: aqua;
+  overflow: scroll;
+}
+/*componente option*/
+.option__container {
+  list-style-type: none;
+}
+.option__item {
+  padding: 1rem;
+}

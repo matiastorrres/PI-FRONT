@@ -20,7 +20,6 @@
   margin-bottom: 1rem;
 }
 .active {
-  background-color: #000;
-  color: #fff;
   background-color: red;
+  color: #000;
 }

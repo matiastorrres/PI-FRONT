@@ -1,23 +1,24 @@
-import "./Header.css";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
 import { Menu } from "../Menu/Menu";
 import { useIsWide } from "../../hook/useIsWide";
+import "./Header.css";
+
 export const Header = ({ setAllVidegames }) => {
+  /*estados para logica de buscador*/
   const [name, setName] = useState("");
   const [isRequesting, setIsRequesting] = useState(false);
-  const [showMenu, setShowMenu] = useState(true);
-  const { isWide } = useIsWide();
 
-  const refreshPage = () => {
-    window.location.reload();
-  };
+  /*estado para mostrar o no menu*/
+  const [showMenu, setShowMenu] = useState(false);
+
+  /*ocultar los componentes segun las medidas de la ventana*/
+  const { isWide } = useIsWide();
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log("entra", isRequesting);
     if (name.trim().length <= 0) return;
     if (!name) return;
     if (isRequesting) return;
@@ -25,21 +26,25 @@ export const Header = ({ setAllVidegames }) => {
     fetch(`http://localhost:3001/videogame?name=${name}`)
       .then((resp) => resp.json())
       .then((data) => {
-        console.log(data);
         setName("");
         setAllVidegames(data);
         setIsRequesting(false);
       });
   };
 
+  /*logica para mostrar menu y ocultar el scroll*/
   const handleMenu = () => {
-    setShowMenu(false);
+    setShowMenu(true);
+    document.body.style.overflowY = "hidden";
   };
 
   return (
     <header className="header__container">
       <div className="header__wrapper">
-        <button onClick={refreshPage} className="header__title">
+        <button
+          onClick={() => window.location.reload()}
+          className="header__title"
+        >
           GAMES
         </button>
         <nav className="header__nav">
@@ -71,7 +76,7 @@ export const Header = ({ setAllVidegames }) => {
           )}
         </nav>
       </div>
-      <Menu setShowMenu={setShowMenu} showMenu={showMenu} />
+      {showMenu && <Menu setShowMenu={setShowMenu} />}
     </header>
   );
 };
