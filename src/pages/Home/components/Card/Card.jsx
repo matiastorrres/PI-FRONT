@@ -1,7 +1,16 @@
 import PropTypes from "prop-types";
 import "./Card.css";
+import { useNavigate } from "react-router-dom";
 
-export const Card = ({ name, background_image, genres, rating, platforms }) => {
+export const Card = ({
+  name,
+  background_image,
+  genres,
+  rating,
+  platforms,
+  id,
+}) => {
+  const navigate = useNavigate();
   return (
     <section className="card__Container">
       <img src={background_image} alt={name} className="card__img" />
@@ -11,7 +20,9 @@ export const Card = ({ name, background_image, genres, rating, platforms }) => {
           <p key={el}>{el}</p>
         ))}
       </div>
-      <h3 className="card__title">{name}</h3>
+      <h3 className="card__title" onClick={() => navigate(`../detail/${id}`)}>
+        {name}
+      </h3>
       <article className="card__article">
         <p>Genres: </p>
         <div className="card__items">
@@ -36,4 +47,5 @@ Card.prototype = {
   genres: PropTypes.arrayOf(PropTypes.string),
   rating: PropTypes.string,
   platforms: PropTypes.arrayOf(PropTypes.string),
+  id: PropTypes.string,
 };

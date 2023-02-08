@@ -12,7 +12,7 @@ export const AppRouter = () => {
       <Route path="/" element={<LandingPage />} />
       <Route path="/home" element={<Home />} />
       <Route path="/newgame" element={<CreateVideogame />} />
-      <Route path="/detail" element={<DetailVideogame />} />
+      <Route path="/detail/:id" element={<DetailVideogame />} />
     </Routes>
   );
 };

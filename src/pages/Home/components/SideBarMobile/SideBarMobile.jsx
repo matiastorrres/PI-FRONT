@@ -1,11 +1,10 @@
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faAngleDown } from "@fortawesome/free-solid-svg-icons";
-import { faFilter } from "@fortawesome/free-solid-svg-icons";
-import "./SideBarMobile.css";
 import { useState } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faAngleDown, faFilter } from "@fortawesome/free-solid-svg-icons";
 import { ModalOrder } from "../ModalOrder/ModalOrder";
 import { useIsWide } from "../../hook/useIsWide";
 import { ModalFilter } from "../ModalFilter/ModalFilter";
+import "./SideBarMobile.css";
 
 export const SideBarMovile = () => {
   const [showFilter, setShowFilter] = useState(false);
@@ -37,12 +36,8 @@ export const SideBarMovile = () => {
           <FontAwesomeIcon icon={faFilter} />
         </button>
       </section>
-      {showOrder && (
-        <ModalOrder showOrder={showOrder} setShowOrder={setShowOrder} />
-      )}
-      {showFilter && (
-        <ModalFilter showFilter={showFilter} setShowFilter={setShowFilter} />
-      )}
+      {showOrder && <ModalOrder setShowOrder={setShowOrder} />}
+      {showFilter && <ModalFilter setShowFilter={setShowFilter} />}
     </>
   );
 };

@@ -1,0 +1,21 @@
+.createVideogame__container {
+  display: flex;
+  justify-content: center;
+}
+
+.createVideogame__wrapper {
+  background-color: #151515;
+  color: azure;
+  margin: 2rem 1rem;
+  margin-top: 2rem;
+  min-width: 320px;
+  max-width: 600px;
+  width: 100%;
+  padding: 1rem 2rem;
+  border-radius: 1rem;
+}
+.createVideogame__title {
+  padding: 1rem;
+  text-align: center;
+  color: hsla(0, 0%, 100%, 0.8);
+}

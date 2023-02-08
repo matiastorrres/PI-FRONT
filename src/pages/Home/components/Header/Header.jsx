@@ -65,7 +65,7 @@ export const Header = ({ setAllVidegames }) => {
           </form>
           {isWide ? (
             <div className="header__nav-wrapper-desk">
-              <Link to="/create">CREATE VIDEOGAME</Link>
+              <Link to="/newgame">CREATE VIDEOGAME</Link>
               <Link to="/create">LOG IN</Link>
               <Link to="/create">SIGN UP</Link>
             </div>

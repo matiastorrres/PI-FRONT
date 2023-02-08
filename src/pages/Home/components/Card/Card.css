@@ -22,7 +22,12 @@
   justify-content: center;
   align-items: center;
   margin: 0;
-  height: 4rem;
+  min-height: 4rem;
+  cursor: pointer;
+  transition: color 0.8s ease-in;
+}
+.card__title:hover {
+  color: aqua;
 }
 .card__platforms {
   display: flex;

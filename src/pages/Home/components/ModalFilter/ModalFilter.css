@@ -16,8 +16,8 @@
   right: 10px;
   border-radius: 1rem;
   padding: 1rem;
-  background-color: aqua;
   overflow: scroll;
+  color: #000;
 }
 /*componente option*/
 .option__container {

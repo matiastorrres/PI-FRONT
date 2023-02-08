@@ -14,6 +14,7 @@ export const CardsContainer = ({ currentVideogames }) => {
             rating={el.rating}
             platforms={el.platforms}
             key={el.id}
+            id={el.id}
           />
         ))}
     </section>

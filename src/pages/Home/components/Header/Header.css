@@ -22,8 +22,15 @@
   font-size: 1.5rem;
   font-weight: bolder;
   color: #fff;
+  cursor: pointer;
+  padding: 0.5rem;
+  transition: 0.5s all ease-in;
 }
-
+.header__title:hover {
+  background-color: #fff;
+  color: black;
+  border-radius: 1rem;
+}
 .header__nav {
   min-width: 250px;
   height: inherit;
