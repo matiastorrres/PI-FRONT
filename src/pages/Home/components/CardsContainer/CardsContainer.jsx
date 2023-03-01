@@ -2,7 +2,8 @@ import { Card } from "../Card/Card";
 import "./CardsContainer.css";
 import PropTypes from "prop-types";
 
-export const CardsContainer = ({ currentVideogames }) => {
+export const CardsContainer = ({ currentVideogames, loading }) => {
+  if (loading) return <>cargando.....</>;
   return (
     <section className="container__cards">
       {currentVideogames &&

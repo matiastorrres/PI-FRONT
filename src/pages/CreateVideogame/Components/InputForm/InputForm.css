@@ -1,6 +1,6 @@
 .inputForm__container {
   background-color: 0 -2px 5px rgb(0 0 0 / 50%);
-  height: 150px;
+  min-height: 150px;
   display: flex;
   flex-direction: column;
   margin: 0 auto;
@@ -8,10 +8,16 @@
   border-top: 1px solid #fff;
   border-bottom: 1px solid #fff;
   justify-content: center;
+  padding-bottom: 0.5rem;
 }
 .inputForm__label {
   color: hsla(0, 0%, 100%, 0.4);
   margin-bottom: 1rem;
+}
+/* agregar una opcion a que esto solo aparesca cuando sea algo obligatorio*/
+.inputForm__label::after {
+  content: "*";
+  color: red;
 }
 .inputForm__input {
   height: 3rem;
@@ -21,4 +27,13 @@
   opacity: 0.5;
   font-size: 1.2rem;
   padding: 1rem;
+}
+.inputForm__error {
+  background-color: red;
+  min-height: 2rem;
+  display: flex;
+  align-items: center;
+  padding: 1rem;
+  border-bottom-left-radius: 0.5rem;
+  border-bottom-right-radius: 0.5rem;
 }

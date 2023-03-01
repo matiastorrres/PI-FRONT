@@ -5,6 +5,7 @@
   color: #fff;
   position: fixed;
   z-index: 50;
+  border-bottom: 1px solid #fff;
 }
 .header__wrapper {
   background-color: inherit;
@@ -39,6 +40,7 @@
   align-items: center;
   flex-grow: 0.8;
 }
+
 .header__search {
   margin: 1rem;
   flex-grow: 0.8;
@@ -50,11 +52,12 @@
   border-bottom-left-radius: 10px;
   text-align: center;
   background-color: hsla(0, 0%, 100%, 0.16);
-  width: 70%;
+  width: 80%;
   color: #fff;
   font-size: 1rem;
 }
 .header__search-inputSubmit {
+  width: 20%;
   background-color: aqua;
   height: 2rem;
   border-top-right-radius: 10px;

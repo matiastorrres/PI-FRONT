@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { fetchingData } from "../../../services/getAllVideogames";
 
 export const useGetallVideoGames = () => {
   const [allVideogames, setAllVidegames] = useState([]);
@@ -7,22 +8,22 @@ export const useGetallVideoGames = () => {
   useEffect(() => {
     const abortController = new AbortController();
     const signal = abortController.signal;
+    const url = "http://localhost:3001/videogame";
     setLoading(true);
-    fetch("http://localhost:3001/videogame", { signal })
-      .then((res) => res.json())
+    fetchingData({ url, signal })
       .then((data) => {
         setAllVidegames(data);
-        setLoading(false);
       })
-      .catch((err) => console.log(err));
+      .catch((error) => console.log(error))
+      .finally(() => setLoading(false));
+
     return () => abortController.abort();
   }, []);
 
   return {
     allVideogames,
     loading,
+    setLoading,
     setAllVidegames,
   };
 };
-
-export const useFetchAndLoad = () => {};

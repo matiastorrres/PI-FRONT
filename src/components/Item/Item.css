@@ -1,0 +1,13 @@
+.selectItem__option {
+  padding: 0.8rem;
+  background-color: hsla(0, 0%, 100%, 0.06);
+  border: none;
+  border-bottom: 1px solid #000;
+  color: #fff;
+  text-align: start;
+  cursor: pointer;
+}
+.isSelect {
+  color: green;
+  cursor: not-allowed;
+}

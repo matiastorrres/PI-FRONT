@@ -3,7 +3,9 @@ import { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
 import { Menu } from "../Menu/Menu";
+import { Search } from "../Search/Search";
 import { useIsWide } from "../../hook/useIsWide";
+
 import "./Header.css";
 
 export const Header = ({ setAllVidegames }) => {
@@ -23,6 +25,7 @@ export const Header = ({ setAllVidegames }) => {
     if (!name) return;
     if (isRequesting) return;
     setIsRequesting(true);
+
     fetch(`http://localhost:3001/videogame?name=${name}`)
       .then((resp) => resp.json())
       .then((data) => {
@@ -38,6 +41,7 @@ export const Header = ({ setAllVidegames }) => {
     document.body.style.overflowY = "hidden";
   };
 
+  console.log(name.length);
   return (
     <header className="header__container">
       <div className="header__wrapper">
@@ -63,6 +67,8 @@ export const Header = ({ setAllVidegames }) => {
               disabled={name ? false : true}
             />
           </form>
+          {name.length > 1 && <Search name={name} setName={setName} />}
+
           {isWide ? (
             <div className="header__nav-wrapper-desk">
               <Link to="/newgame">CREATE VIDEOGAME</Link>

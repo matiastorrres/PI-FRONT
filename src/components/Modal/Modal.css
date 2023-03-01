@@ -1,0 +1,62 @@
+.modal__container {
+  background-color: rgba(0, 0, 0);
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+  color: #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal__View {
+  background-color: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  width: 90%;
+  height: 90vh;
+  box-sizing: border-box;
+  animation: fadeIn 0.3s ease forwards;
+}
+
+.modal__Header {
+  background-color: #fff;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.modal__fadeOut {
+  animation: fadeOut 0.3s ease;
+}
+.modal__closeButton {
+  border: none;
+  background-color: none;
+  font-size: bold;
+  padding: 10px 15px;
+  border-radius: 3px;
+  cursor: pointer;
+  color: #999;
+}
+.modal__closeButton:hover {
+  color: #000;
+}
+
+@keyframes fadeIn {
+  from {
+    transform: scale(0);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(0);
+  }
+}
