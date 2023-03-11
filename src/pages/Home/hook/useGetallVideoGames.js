@@ -22,8 +22,7 @@ export const useGetallVideoGames = () => {
 
   return {
     allVideogames,
-    loading,
-    setLoading,
     setAllVidegames,
+    loading,
   };
 };

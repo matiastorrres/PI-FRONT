@@ -5,7 +5,7 @@ para cambiar de pagina
 */
 
 export const usePagination = ({
-  dataArray,
+  videogames,
   amountOfDataPerPage,
   setPage,
   page,
@@ -14,14 +14,14 @@ export const usePagination = ({
   const [calculationNumberPage, setCalculationNumberPage] = useState([]);
 
   useEffect(() => {
-    const res = Math.ceil(dataArray.length / amountOfDataPerPage);
+    const res = Math.ceil(videogames.length / amountOfDataPerPage);
     setCalculationNumberPage(res);
     let countButtons = [];
     for (let i = 1; i <= res; i++) {
       countButtons.push(i);
     }
     setNumberPage(countButtons);
-  }, [dataArray]);
+  }, [videogames]);
 
   const goToNextPage = () => {
     if (page < calculationNumberPage) setPage(page + 1);

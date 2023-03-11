@@ -1,14 +1,16 @@
 import { Link } from "react-router-dom";
-import { useState } from "react";
+import { useState, useContext } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
 import { Menu } from "../Menu/Menu";
 import { Search } from "../Search/Search";
 import { useIsWide } from "../../hook/useIsWide";
-
+import { VideogamesContext } from "../../context/videogames";
 import "./Header.css";
 
-export const Header = ({ setAllVidegames }) => {
+export const Header = () => {
+  const { setvideogames, setauxiliar } = useContext(VideogamesContext);
+
   /*estados para logica de buscador*/
   const [name, setName] = useState("");
   const [isRequesting, setIsRequesting] = useState(false);
@@ -30,7 +32,8 @@ export const Header = ({ setAllVidegames }) => {
       .then((resp) => resp.json())
       .then((data) => {
         setName("");
-        setAllVidegames(data);
+        setvideogames(data);
+        setauxiliar(data);
         setIsRequesting(false);
       });
   };
@@ -40,8 +43,6 @@ export const Header = ({ setAllVidegames }) => {
     setShowMenu(true);
     document.body.style.overflowY = "hidden";
   };
-
-  console.log(name.length);
   return (
     <header className="header__container">
       <div className="header__wrapper">

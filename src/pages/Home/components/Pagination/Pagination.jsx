@@ -1,15 +1,18 @@
 import "./Pagination.css";
-import PropTypes from "prop-types";
 import { usePagination } from "../../hook/usePagination";
+import { usePaginatedData } from "../../hook/usePaginatedData";
+import { useContext } from "react";
+import { VideogamesContext } from "../../context/videogames";
 
-export const Pagination = ({
-  dataArray,
-  amountOfDataPerPage,
-  setPage,
-  page,
-}) => {
+export const Pagination = () => {
+  const { videogames } = useContext(VideogamesContext);
+
+  const { page, setPage, amountOfDataPerPage } = usePaginatedData({
+    videogames,
+  });
+
   const { numberPage, goToNextPage, goToPreviousPage, handleClick } =
-    usePagination({ dataArray, amountOfDataPerPage, setPage, page });
+    usePagination({ videogames, amountOfDataPerPage, setPage, page });
 
   return (
     <section className="pagination__container">
@@ -30,11 +33,4 @@ export const Pagination = ({
       </div>
     </section>
   );
-};
-
-Pagination.propTypes = {
-  dataArray: PropTypes.array,
-  amountOfDataPerPage: PropTypes.number,
-  setPage: PropTypes.func,
-  page: PropTypes.number,
 };

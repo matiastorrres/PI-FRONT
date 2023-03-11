@@ -12,4 +12,8 @@
   justify-content: space-between;
   padding: 0.5rem;
   font-weight: 600;
+  margin: 0.5rem 0;
+}
+.sideBarDesk__item > * {
+  cursor: pointer;
 }

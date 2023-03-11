@@ -5,7 +5,7 @@ import { Home } from "./pages/Home/Home";
 import { CreateVideogame } from "./pages/CreateVideogame/CreateVideogame";
 import { DetailVideogame } from "./pages/DetailVideogame/DetailVideogame";
 
-/*hacer importaciones dinamicas*/
+/*TODO:hacer importaciones dinamicas*/
 export const AppRouter = () => {
   return (
     <Routes>
